@@ -1,0 +1,154 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    height: 70px;
+    margin: 0 auto;
+}
+
+.container h1 {
+    font-style: italic;
+}
+
+.container:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+header {
+    background-color: rgb(0, 0, 0);
+}
+
+header h1 {
+    position: absolute;
+    float: left;
+    padding: 20px 0;
+    color: #ffd700;
+    z-index: 2;
+}
+
+header ul {
+    float: right;
+}
+
+header ul li {
+    display: inline-block;
+    color: #ffd700;
+}
+
+header ul li a {
+    padding: 21px 5px;
+    display: inline-block;
+}
+
+header ul li a:hover {
+    height: 15px;
+    padding: 4px;
+    border-radius: 5px;
+    background-color: #ffd700;
+    color: #000000;
+}
+
+.pembungkus img {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.pembungkus h2 {
+    border: 1px solid;
+    padding: 20px 20;
+    position: absolute;
+    left: 580px;
+    top: 300px;
+    z-index: 3;
+    color: rgb(253, 215, 3);
+}
+
+section {
+    padding: 50px 0;
+}
+
+section h1 {
+    color: #5F9EA0;
+    font-size: 40;
+    text-align: center;
+    padding: 20px 0px;
+    margin-bottom: 20px;
+}
+
+section h2 {
+    color: #5F9EA0;
+    font-size: 20;
+    text-align: center;
+    padding: 20px 0px;
+    margin-bottom: 20px;
+}
+
+.kami {
+    background: #ffffff;
+}
+
+.wedding_organizer p {
+    color: #666;
+    text-align: center;
+    word-spacing: 2px;
+    line-height: 25px;
+}
+
+.wedding_organizer h1 {
+    padding: 0;
+}
+
+.container p {
+    color: #666;
+    text-align: center;
+    word-spacing: 2px;
+    line-height: 25px
+}
+
+.kotak {
+    color: #5F9EA0;
+    margin-bottom: 20px;
+}
+
+.kotak .cols-4 {
+    width: 25%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    float: left;
+}
+
+.icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 70px;
+    font-size: 50px;
+    margin: auto;
+}
+
+.kotak .cols-4 h4 {
+    margin: 10px 0;
+}
+
+footer {
+    text-align: center;
+    background-color: #000;
+    font-size: 8;
+    color: #fff;
+    margin: 200px 0px 0px 0px;
+    padding: 20px 0;
+}
