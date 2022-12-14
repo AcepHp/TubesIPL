@@ -1,0 +1,140 @@
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+    }
+    
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+    
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .container:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+    
+    header {
+        background-color: rgb(0, 0, 0);
+    }
+    
+    header h1 {
+        position: absolute;
+        float: left;
+        padding: 20px 0;
+        color: #ffd700;
+        z-index: 2;
+    }
+    
+    header ul {
+        float: right;
+    }
+    
+    header ul li {
+        display: inline-block;
+        color: #ffd700;
+    }
+    
+    header ul li a {
+        padding: 21px 5px;
+        display: inline-block;
+    }
+    
+    header ul li a:hover {
+        height: 15px;
+        padding: 4px;
+        border-radius: 5px;
+        background-color: #ffd700;
+        color: #000000;
+    }
+    
+    .active {
+        background-color: #ffffff;
+        color: #000000;
+    }
+    
+    .kontak h1 {
+        border: 3px solid;
+        padding: 0px 10px 10px 10px;
+        border-bottom-width: 10px 10px;
+        border-top-color: white;
+        border-right-color: white;
+        border-left-color: white;
+        border-bottom-color: #5F9EA0;
+        margin: 50px 0px 10px 0px;
+        color: #666;
+        font-size: 20px;
+    }
+    
+    .kontak h1 u {
+        color: #666;
+        margin: 100px 0px 0px 0px;
+    }
+    
+    .kontak h2 {
+        color: #666;
+        text-align: center;
+        font-size: 20px;
+        margin: 50px 0px 10px 0px;
+    }
+    
+    .kontak p {
+        color: #666;
+        text-align: center;
+        word-spacing: 2px;
+        line-height: 25px
+    }
+    
+    .float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #25d366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+    }
+    
+    .my-float {
+        margin-top: 16px;
+    }
+    
+    .floatt {
+        margin: 0px 0px 80px 0px;
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #B830B4;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 101;
+    }
+    
+    .my-floatt {
+        margin-top: 16px;
+    }
+    
+    .footer {
+        text-align: center;
+        background-color: #000;
+        font-size: 16;
+        color: #fff;
+        margin: 20px 0px 0px 0px;
+        padding: 30px 0;
+    }
