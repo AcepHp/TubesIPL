@@ -1,3 +1,12 @@
+<?php 
+ 
+session_start();
+ 
+if (!isset($_SESSION['Username'])) {
+    header("Location: ../index.php");
+}
+?>
+
 <html>
 
 <head>
@@ -21,74 +30,79 @@
             <h1><a href="#"><i class="fas fa-ring"> GreenSide </i></a></h1>
             <h1><i class="fas fa-ring"> GreenSide </i></h1>
             <ul>
-                <li><a href="../index.php">Home</a></li>
+                <li><a href="index_login.php">Home</a></li>
                 <!-- Menambahkan class active -->
                 <li><a href="paket.php">Paket</a></li>
                 <li><a href="../galeri.php">Galeri</a></li>
                 <li><a href="#">Pesanan</a></li>
                 <li><a href="kontak.php">Kontak</a></li>
+                <li><a href="../auth/logout.php">Logout</a></li>
             </ul>
         </div>
     </header>
-    <form action="../auth/login.php">
+    <form action="../auth/proses_input.php" method="POST">
         <div class="formulir">
             <div class="pemesanan">
                 <h1 style="text-align: center;">Formulir Pemesanan</h1>
-
+                <label for="orang">Nama Pemesan</label>
+                <br>
+                <input type="text" name="nama" value="<?php echo $_SESSION['nama']?>" readonly>
+                <br>
                 <br><label for="catering">Catering</label><br>
-                <select id="catering" name="catering">
+                <select id="catering" name="catering" required>
                     <option value disabled selected hidden>Pilihan Catering</option>
-                    <option value="Teratai Catering">Teratai Catering :Rp.20Jt</option>
-                    <option>Akasya Catering</option>
-                    <option>EATEVER Catering</option>
+                    <option value="Teratai Catering">Teratai Catering :Rp.5Jt</option>
+                    <option value="Akasya Catering">Akasya Catering :Rp.10Jt</option>
+                    <option value="EATEVER Catering">EATEVER Catering:Rp.15Jt</option>
                 </select>
                 <br>
                 <label for="Tempat">Tempat</label><br>
-                <select id="tempat" name="tempat">
+                <select id="tempat" name="tempat" required>
                     <option value disabled selected hidden>Pilihan Tempat</option>
-                    <option>Indoor</option>
-                    <option>Outdoor</option>
+                    <option value="Indoor">Indoor:Rp.5Jt</option>
+                    <option value="Outdoor">Outdoor:Rp.10Jt</option>
                 </select>
                 <br>
                 <label for="orang">Jumlah Orang</label>
                 <br>
-                <input type="number" name="orang" id="orang">
+                <input type="number" name="orang" id="orang" required>
                 <br>
                 <label for="MC">MC</label><br>
-                <input type="number" id="mc" name="mc" placeholder="Butuh Berapa MC">
+                <input type="number" id="mc" name="mc" placeholder="Harga 1 MC 2Jt" required>
 
 
 
                 <br><label for="hiburan">Hiburan</label><br>
-                <select id="hiburan" name="hiburan">
+                <select id="hiburan" name="hiburan" required>
                     <option value disabled selected hidden>Pilihan Hiburan</option>
-                    <option>Dangdut</option>
-                    <option>Orkestra</option>
-                    <option>Live Acoustic</option>
+                    <option value="Dangdut">Dangdut:Rp.30Jt</option>
+                    <option value="Orkestra">Orkestra:Rp.50Jt</option>
+                    <option value="Live Acoustic">Live Acoustic:Rp.5Jt</option>
                 </select>
 
                 <br><label for="dekorasi">Dekorasi</label><br>
-                <select id="dekorasi" name="dekorasi">
+                <select id="dekorasi" name="dekorasi" required>
                     <option value disabled selected hidden>Pilihan Dekorasi</option>
-                    <option>Minimalis</option>
-                    <option>Mewah</option>
-                    <option>Pernikahan Adat</option>
+                    <option value="Minimalis">Minimalis:Rp.5Jt</option>
+                    <option value="Mewah">Mewah:Rp.50Jt</option>
+                    <option value="Pernikahan Adat">Pernikahan Adat:Rp.100Jt</option>
                 </select>
 
                 <br><label for="rias">Makeup</label><br>
-                <select id="rias" name="rias">
+                <select id="rias" name="rias" required>
                     <option value disabled selected hidden>Pilihan Makeup</option>
-                    <option>Mustika Ratu</option>
-                    <option>Wardah</option>
-                    <option>Kryolan</option>
+                    <option value="Mustika Ratu">Mustika Ratu:Rp.5Jt</option>
+                    <option value="Wardah">Wardah:Rp.5Jt</option>
+                    <option value="Kryolan">Kryolan:Rp.5Jt</option>
                 </select>
                 <br>
 
-                <br><label for="tanggal">Pilih Tanggal</label><br>
+                <br><label for="tanggal" required>Pilih Tanggal</label><br>
                 <input type="date" id="tanggal" name="tanggal">
                 <br>
 
-                <input type="submit" value="Login">
+                <input type="submit" value="Daftar"
+                    onclick="return confirm('Apakah Anda Yakin Dengan Pemesanan Ini ?');">
                 <br>
             </div>
         </div>
