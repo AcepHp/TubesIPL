@@ -1,14 +1,23 @@
+<?php 
+ 
+session_start();
+ 
+if (!isset($_SESSION['Username'])) {
+    header("Location: ../index.php");
+}
+
+?>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Greenside</title>
-    <link rel="stylesheet" type="text/css" href="../css/style-home.css">
+    <link rel="stylesheet" type="text/css" href="../../css/style-home.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <link rel="stylesheet" href="../slick/slick.css">
-    <link rel="stylesheet" href="../slick/slick-theme.css">
+    <link rel="stylesheet" href="../../slick/slick.css">
+    <link rel="stylesheet" href="../../slick/slick-theme.css">
     <style type="text/css">
     .slick-prev:before,
     .slick-next:before {
@@ -30,10 +39,12 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <!-- Menambahkan class active -->
-                <li><a href="user/paket.php">Paket</a></li>
-                <li><a href="galeri.php">Galeri</a></li>
-                <li><a href="user/pemesanan.php">Pesanan</a></li>
- 
+                <li><a href="paket_user.php">Paket</a></li>
+                <li><a href="galeri_user.php">Galeri</a></li>
+                <li><a href="pemesanan_user.php">Pesanan</a></li>
+                <li><a href="kontak_user.php">Kontak</a></li>
+                <li><a href="../auth/logout.php">Logout</a></li>
+                <li><?php echo $_SESSION['Username'];?></li>
             </ul>
         </div>
     </header>
@@ -42,24 +53,24 @@
     <div class="chartClass">
 
         <div class="pembungkus" style="width: auto; height: auto; margin: 0px 20px auto 0px">
-            <img src="../gambar/kkk.jpg">
+            <img src="../../gambar/kkk.jpg">
             <h2>Welcome Website</h2>
             <h3> </h3>
         </div>
         <div class="pembungkus" style="width: auto; height: auto; margin: 0px 20px auto 0px">
-            <img src="../gambar/kk.jpg">
+            <img src="../../gambar/kk.jpg">
             <h4>Give Guarantee of happiness</h4>
             <h3> </h3>
         </div>
         <div class="pembungkus" style="width: auto; height: auto; margin: 0px 20px auto 0px">
-            <img src="../gambar/k.jpg">
+            <img src="../../gambar/k.jpg">
             <h4>Give Guarantee of happiness</h4>
             <h3> </h3>
         </div>
     </div>
     </div>
-    <script src="../jquery/jquery.min.js"></script>
-    <script src="../slick/slick.js"></script>
+    <script src="../../jquery/jquery.min.js"></script>
+    <script src="../../slick/slick.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
         $('.chartClass').slick({
@@ -96,16 +107,7 @@
 
         </div>
 
-    <div class="kontak">
-    <a href="https://api.whatsapp.com/send?phone=6282316167554&text=Hallo%20saya%20mau%20order!!" class="float"
-                target="_blank">
-                <i class="fa fa-whatsapp my-float"></i>
-            </a>
-            <a href="https://api.whatsapp.com/send?phone=6282316167554&text=Hallo%20saya%20mau%20order!!" class="float"
-                target="_blank">
-                <i class="fa fa-whatsapp my-float"></i>
-            </a>
-    </div>
+
     </section>
     <section class="kami">
         <div class="container">
@@ -146,7 +148,7 @@
                     <h2> Acep & Pevita Pearce </h2>
                 </div>
                 <div class="cols-2">
-                    <img src="../gambar/InkedIMG_9190_LI.jpg"
+                    <img src="../../gambar/InkedIMG_9190_LI.jpg"
                         style="width: 600px; height: 500px; text-align: left; box-shadow: 8px 8px 2px rgba(0,0,0,0.8); padding: 0px; border: 0px dashed grey;">
                 </div>
             </div>
@@ -157,20 +159,20 @@
         <div class="container">
             <div class="tabel">
                 <div class="cols-3">
-                    <div class="ikon"><img src="../gambar/bird.png"></div>
+                    <div class="ikon"><img src="../../gambar/bird.png"></div>
                     <h4>Akad</h4>
                     <p>Di Greenside kami bertanggung jawab atas akad anda sampai selesai, greenside memprioritaskan
                         kesenangan dan kepuasan hati kalian, greenside akan membuat anda merasa puas dengan service akad
                         di kami</p>
                 </div>
                 <div class="cols-3">
-                    <div class="ikon"><img src="../gambar/catering.png"></div>
+                    <div class="ikon"><img src="../../gambar/catering.png"></div>
                     <h4>Catering</h4>
                     <p>Greenside sudah menyiapkan cathering selaku panitia penyelenggara WO, Di catering kami anda bisa
                         memilih makanan apa saja yang anda inginkan mulai dari makanan berat sampai makanan ringan.</p>
                 </div>
                 <div class="cols-3">
-                    <div class="ikon"><img src="../gambar/makeup.png"></div>
+                    <div class="ikon"><img src="../../gambar/makeup.png"></div>
                     <h4>Makeup</h4>
                     <p>Di greenside pun kami sudah menyiapkan makeup artis untuk mendandani pengantin dan keluarga anda,
                         jangan khawatir makeup artis di kami sudah sangat profesional menangani wedding.</p>
@@ -178,14 +180,14 @@
             </div>
             <div class="tabel2">
                 <div class="cols-2">
-                    <div class="ikon"><img src="../gambar/kamera.png"></div>
+                    <div class="ikon"><img src="../../gambar/kamera.png"></div>
                     <h4>Photografi</h4>
                     <p>Di Greenside kami menyediakan liputan foto dan video saat pernikahan anda berlangsung,
                         photografer kami sangatlah profesional dipastikan anda akan puas saat melihat lihat hasil
                         liputan kami.</p>
                 </div>
                 <div class="cols-2">
-                    <div class="ikon"><img src="../gambar/music.png"></div>
+                    <div class="ikon"><img src="../../gambar/music.png"></div>
                     <h4>Hiburan</h4>
                     <p>Greenside sudah menyiapkan hiburan selaku panitia penyelenggara WO, Di hiburan kami anda bisa
                         memilih hiburan apa saja yang anda inginkan mulai dari makanan dandut sampai orkesta.</p>
@@ -200,13 +202,13 @@
             <h3>Pendukung</h3>
             <div class="sponsor">
                 <div class="colsSP-3">
-                    <div class="ikkon"><img src="../gambar/cate.png" width="250px" height="150px"></div>
+                    <div class="ikkon"><img src="../../gambar/cate.png" width="250px" height="150px"></div>
                 </div>
                 <div class="colsSP-3">
-                    <div class="ikkon"><img src="../gambar/hahaha.png" width="250px" height="150px"></div>
+                    <div class="ikkon"><img src="../../gambar/hahaha.png" width="250px" height="150px"></div>
                 </div>
                 <div class="colsSP-3">
-                    <div class="ikkon"><img src="../gambar/make.png" width="250px" height="150px"></div>
+                    <div class="ikkon"><img src="../../gambar/make.png" width="250px" height="150px"></div>
                 </div>
             </div>
     </section>

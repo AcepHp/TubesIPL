@@ -3,7 +3,7 @@
 session_start();
  
 if (!isset($_SESSION['Username'])) {
-    header("Location: index.php");
+    header("Location: ../index.php");
 }
 
 ?>
@@ -39,11 +39,8 @@ if (!isset($_SESSION['Username'])) {
             <ul>
                 <li><a href="#">Home</a></li>
                 <!-- Menambahkan class active -->
-                <li><a href="paket.php">Paket</a></li>
-                <li><a href="../galeri.php">Galeri</a></li>
-                <li><a href="pemesanan.php">Pesanan</a></li>
-                <li><a href="kontak.php">Kontak</a></li>
-            </ul>
+                <li><a href="daftar_booking.php">Daftar Booking</a></li>
+                <li><a href="pegawai.php">Daftar Pegawai</a></li>
         </div>
     </header>
 
